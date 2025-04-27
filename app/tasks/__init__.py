@@ -1,0 +1,1 @@
+from app.tasks.solve import execute_solve 
