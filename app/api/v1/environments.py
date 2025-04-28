@@ -18,7 +18,7 @@ router = APIRouter()
 environment_crud = CRUDBase[Environment, EnvironmentCreate, EnvironmentUpdate](Environment)
 
 
-@router.get("/", response_model=List[EnvironmentSchema])
+@router.get("", response_model=List[EnvironmentSchema])
 def read_environments(
     db: Session = Depends(get_db),
     skip: int = 0,
@@ -34,7 +34,7 @@ def read_environments(
     return environments
 
 
-@router.post("/", response_model=EnvironmentSchema)
+@router.post("", response_model=EnvironmentSchema)
 def create_environment(
     *,
     db: Session = Depends(get_db),

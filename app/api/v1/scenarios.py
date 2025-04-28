@@ -19,7 +19,7 @@ router = APIRouter()
 scenario_crud = CRUDBase[Scenario, ScenarioCreate, ScenarioUpdate](Scenario)
 
 
-@router.get("/", response_model=List[ScenarioSchema])
+@router.get("", response_model=List[ScenarioSchema])
 def read_scenarios(
     db: Session = Depends(get_db),
     skip: int = 0,
@@ -53,7 +53,7 @@ def read_scenarios(
     return scenarios
 
 
-@router.post("/", response_model=ScenarioSchema)
+@router.post("", response_model=ScenarioSchema)
 def create_scenario(
     *,
     db: Session = Depends(get_db),

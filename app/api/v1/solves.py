@@ -23,7 +23,7 @@ router = APIRouter()
 solve_crud = CRUDBase[Solve, SolveCreate, SolveUpdate](Solve)
 
 
-@router.get("/", response_model=List[SolveSchema])
+@router.get("", response_model=List[SolveSchema])
 def read_solves(
     db: Session = Depends(get_db),
     skip: int = 0,
@@ -47,7 +47,7 @@ def read_solves(
     return solves
 
 
-@router.post("/", response_model=SolveSchema)
+@router.post("", response_model=SolveSchema)
 def create_solve(
     *,
     db: Session = Depends(get_db),

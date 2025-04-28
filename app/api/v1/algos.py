@@ -18,7 +18,7 @@ router = APIRouter()
 algo_crud = CRUDBase[Algo, AlgoCreate, AlgoUpdate](Algo)
 
 
-@router.get("/", response_model=List[AlgoSchema])
+@router.get("", response_model=List[AlgoSchema])
 def read_algos(
     db: Session = Depends(get_db),
     skip: int = 0,
@@ -33,7 +33,7 @@ def read_algos(
     return algos
 
 
-@router.post("/", response_model=AlgoSchema)
+@router.post("", response_model=AlgoSchema)
 def create_algo(
     *,
     db: Session = Depends(get_db),

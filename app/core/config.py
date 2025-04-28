@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     CELERY_RESULT_BACKEND: str = os.getenv("CELERY_RESULT_BACKEND", "redis://localhost:6379/0")
 
     # CORS
-    BACKEND_CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:8000", "http://localhost", "http://127.0.0.1:5175"]
+    BACKEND_CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:8000", "http://localhost", "http://127.0.0.1:5175",  "https://husslify.com", "https://www.husslify.com", "https://capstone-frontend.pages.dev", "https://f0f288bb.capstone-frontend.pages.dev", "https://api.husslify.com"]
 
     class Config:
         env_file = ".env"

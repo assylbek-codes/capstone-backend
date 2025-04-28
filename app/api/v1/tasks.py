@@ -19,7 +19,7 @@ router = APIRouter()
 task_crud = CRUDBase[Task, TaskCreate, TaskUpdate](Task)
 
 
-@router.get("/", response_model=List[TaskSchema])
+@router.get("", response_model=List[TaskSchema])
 def read_tasks(
     db: Session = Depends(get_db),
     skip: int = 0,
@@ -52,7 +52,7 @@ def read_tasks(
     return tasks
 
 
-@router.post("/", response_model=TaskSchema)
+@router.post("", response_model=TaskSchema)
 def create_task(
     *,
     db: Session = Depends(get_db),
