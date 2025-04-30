@@ -30,6 +30,10 @@ class Settings(BaseSettings):
     # CORS
     BACKEND_CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:8000", "http://localhost", "http://127.0.0.1:5175",  "https://husslify.com", "https://www.husslify.com", "https://capstone-frontend.pages.dev", "https://f0f288bb.capstone-frontend.pages.dev", "https://api.husslify.com"]
 
+    # Email
+    EMAIL_SENDER: str = os.getenv("EMAIL_SENDER", "")
+    SENDGRID_API_KEY: str = os.getenv("SENDGRID_API_KEY", "")
+
     class Config:
         env_file = ".env"
         case_sensitive = True

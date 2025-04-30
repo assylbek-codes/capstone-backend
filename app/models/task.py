@@ -7,8 +7,7 @@ from app.db.base import Base, TimestampMixin
 
 class TaskStatus(enum.Enum):
     PENDING = "pending"
-    ASSIGNED = "assigned"
-    COMPLETED = "completed"
+    GENERATED = "generated"
     FAILED = "failed"
 
 
