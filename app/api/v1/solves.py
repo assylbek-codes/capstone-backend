@@ -114,12 +114,12 @@ def create_solve(
     print(f"Submitting solve task for solve_id={solve_obj.id}")
     
     # For debugging, let's try executing the task directly
-    try:
-        # This will run the task synchronously for debugging
-        direct_result = execute_solve(solve_obj.id)
-        print(f"Direct task execution result: {direct_result}")
-    except Exception as e:
-        print(f"Error in direct execution: {str(e)}")
+    # try:
+    #     # This will run the task synchronously for debugging
+    #     direct_result = execute_solve(solve_obj.id)
+    #     print(f"Direct task execution result: {direct_result}")
+    # except Exception as e:
+    #     print(f"Error in direct execution: {str(e)}")
     
     # Now submit it to Celery as usual
     task_result = execute_solve.delay(solve_obj.id)

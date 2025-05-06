@@ -117,7 +117,7 @@ async def generate_tasks_with_llm(
     *,
     db: Session = Depends(get_db),
     scenario_id: int,
-    num_tasks: int = Query(5, gt=0, le=50),
+    num_tasks: int = Query(5, gt=0, le=1000),
     task_type: Optional[str] = Query(None, description="Optional task type filter"),
     name: Optional[str] = Query(None, description="Optional name for the tasks"),
     description: Optional[str] = Query(None, description="Optional description for the tasks"),
