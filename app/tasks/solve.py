@@ -715,7 +715,7 @@ def auction_based_assignment(tasks, robots, graph, env_json, params=None):
     robot_battery = {r: battery_capacity for r in robots}
     robot_distance = {r: 0 for r in robots}
     # Add cumulative distance tracker
-    cumulative_distance = {r: 0 for r in robots}
+    # cumulative_distance = {r: 0 for r in robots}
     # Track time for each robot (for scheduling with recharge time)
     robot_time = {r: 0 for r in robots}
     
@@ -904,7 +904,7 @@ def auction_based_assignment(tasks, robots, graph, env_json, params=None):
             
             # Update both distance trackers
             robot_distance[robot] += path_cost
-            cumulative_distance[robot] += path_cost
+            # cumulative_distance[robot] += path_cost
             
             # Update battery using calculate_battery_remaining function
             robot_battery[robot] = calculate_battery_remaining(
@@ -1336,7 +1336,7 @@ def makespan_balanced_assignment(tasks, robots, graph, env_json, params=None):
         
         # Update both distance trackers
         robot_distance[robot] += path_cost
-        cumulative_distance[robot] += path_cost
+        # cumulative_distance[robot] += path_cost
         
         # Update battery using calculate_battery_remaining function
         robot_battery[robot] = calculate_battery_remaining(
@@ -1603,7 +1603,7 @@ def marginal_benefit_assignment(tasks, robots, graph, env_json, params=None):
         
         # Update both distance trackers
         robot_distance[robot] += path_cost
-        cumulative_distance[robot] += path_cost
+        # cumulative_distance[robot] += path_cost
         
         # Update battery using calculate_battery_remaining function
         robot_battery[robot] = calculate_battery_remaining(
